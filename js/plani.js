@@ -104,7 +104,7 @@ function draw_moon( context )
 {
    context.globalCompositeOperation = "source-over";
    var i = Math.floor(( Astro.raddeg( moon.phase ) + 180 ) / 12 );
-   context.drawImage( immoons, i * 16, 0, 16, 16, moon.pos.x - 8, moon.pos.y - 8, 16, 16 );
+   context.drawImage( immoons, i * 16, 0, 200, 200, moon.pos.x - 8, moon.pos.y - 8, 16, 16 );
    context.globalCompositeOperation = "lighter";
    context.fillStyle = "#FFF0E0";
    context.font = "12px Sans-Serif";
@@ -117,7 +117,7 @@ function draw_line( context, s1, s2 )
    if ( s1.pos.visible && s2.pos.visible ) {
       context.beginPath();
       context.moveTo( s1.pos.x, s1.pos.y );
-      context.lineWidth = 0.4;
+      context.lineWidth = 2.5;
       context.lineTo( s2.pos.x, s2.pos.y );
       context.stroke();
    }
@@ -254,6 +254,7 @@ function set_user_obs()
 
    d = now.getDate();
    dt.value = d.toString().slice( 0, 33 );
+   // dt.value = "Tue Sep 29 1992 20:25:00 GMT-0300"
    lon.value = now.getLonDegrees();
    lat.value = now.getLatDegrees();
    slab.checked = ck_starlabels;

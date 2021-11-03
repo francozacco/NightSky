@@ -43,13 +43,13 @@ function init_stars( star )
          var cindex = Math.round( 8 * ( star[ i ].bv + 0.4 ) / 2.4 );
          cindex = Math.max( 0, Math.min( 8, cindex ));
          star[ i ].color = clut[ cindex ];
-         star[ i ].radius = 3.1 - 0.6 * star[ i ].mag;   // 1.0 to 4.0
+         star[ i ].radius = 6.1 - 0.6 * star[ i ].mag;   // 1.0 to 4.0
          star[ i ].bright = true;
       }
       else {
          var gray = 160 - Math.round(( star[ i ].mag - 3.5 ) * 80.0 );
          star[ i ].color = "#" + ( 1 << 24 | gray << 16 | gray << 8 | gray ).toString( 16 ).slice( 1 );
-         star[ i ].radius = 1;
+         star[ i ].radius = 2.8;
          star[ i ].bright = false;
       }
    }
